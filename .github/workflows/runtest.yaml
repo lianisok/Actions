@@ -18,9 +18,11 @@ jobs:
     steps:
       - name: run-file!
         env: 
-          RAW: https://raw.githubusercontent.com/lianisok/Actions/main/
+          RAW: https://raw.githubusercontent.com/lianisok/Actions/main
           
         run: |
-          gcc ${RAW}/testfile/Test1.cpp -lstdc++ -o test
+          ls
+          wget https://raw.githubusercontent.com/lianisok/Actions/main/testfile/Test1.cpp
+          gcc Test1.cpp -lstdc++ -o test
           .\test
         
