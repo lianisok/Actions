@@ -17,7 +17,10 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: run-file!
+        env: 
+          RAW: https://raw.githubusercontent.com/lianisok/Actions/main/
+          
         run: |
-          gcc ${{ github.workspace }}/testfile/Test1.cpp -lstdc++ -o test
+          gcc ${RAW}/testfile/Test1.cpp -lstdc++ -o test
           .\test
         
